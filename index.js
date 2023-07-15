@@ -1,4 +1,4 @@
-const main$$ = document.querySelector(".main");
+const main$$ = document.querySelector(".main-div1");
 
 const newPokemonlist = []
 const getPokemonFullList = async () => {
@@ -11,17 +11,25 @@ const getPokemonFullList = async () => {
 
 
 const drawPokemons = (fullList) =>{
-   for(const data of fullList){
-        let characterCard$$ = document.createElement("figure");
-        characterCard$$.innerHTML = `
-            <h2>${data.name.toUpperCase()}</h2>
+    for(const data of fullList){
+        let characterCard1$$ = document.createElement("figure");
+        characterCard1$$.innerHTML = `
+            <div>
             <img src="${data.sprites.front_default}" alt="${data.name}">
-            <article> Este encantador pokemon se llama ${data.name.charAt(0).toUpperCase() + data.name.slice(1)};y es de tipo ${data.types[0].type.name}  
-            </article>
-
+            <h2>${data.name.toUpperCase()}</h2>
+            </div>
+            <div>
+            <p> Este pokemon se llama ${
+              data.name.charAt(0).toUpperCase() + data.name.slice(1)
+            };</p>
+            <p>y es de tipo ${data.types[0].type.name} </p>
+            </div>;
     `;
-        main$$.appendChild(characterCard$$);
-   }
+        // characterCard2$$.innerHTML = `
+        //   <p> Este pokemon se llama ${data.name.charAt(0).toUpperCase() + data.name.slice(1)};</p>
+        //   <p>y es de tipo ${data.types[0].type.name} </p>`;
+        main$$.appendChild(characterCard1$$);
+  }
   // return fullList.map((data) => ({
   //   nombre: data.name,
   //   peso: data.weight
