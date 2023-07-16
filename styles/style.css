@@ -5,7 +5,6 @@
 
 .main {
   padding: 0px 5%;
-  background-color: yellow;
 }
 .main-div1 {
   margin: 10px;
@@ -14,7 +13,6 @@
   justify-content: center;
 }
 .main-div1 figure {
-  background-color: blue;
   background-image: url("../../public/img/pokedexx.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -32,27 +30,57 @@
   color: white;
   background-color: black;
   display: inline;
-  margin-left: -30px;
   overflow: hidden;
+  padding: 4px 10px;
+  border-radius: 15px;
+  background: linear-gradient(to right, rgb(252, 4, 4), rgb(3, 141, 162), rgb(252, 4, 4));
+  background-size: 600% 100%;
+  animation: gradientAnimation 5s infinite;
 }
-.main-div1 figure h2:hover {
-  animation: reveal 1s forwards;
-  color: blue;
-}
-@keyframes reveal {
+@keyframes gradientAnimation {
   0% {
-    width: 10px;
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
   }
   100% {
-    width: 100%;
+    background-position: 0% 50%;
   }
 }
+.main-div1 figure article {
+  font-size: 25px;
+  color: white;
+  padding-top: 100px;
+}
 .main-div1 figure p {
-  font-size: 20px;
+  font-size: 25px;
+  text-shadow: 1px 1px white;
 }
 .main-div1 figure img {
+  content: url("../../public/img/pokeball.png");
   width: 230px;
+  margin-top: 20px;
+  margin-bottom: -20px;
+  animation: turn 15s infinite;
+}
+.main-div1 figure img:hover {
+  content: none;
+  animation: none;
+  width: 220px;
 }
 .main-div1 div {
   margin-top: 35px;
+}
+
+@keyframes turn {
+  0% {
+    transform: rotate(360deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }/*# sourceMappingURL=style.css.map */

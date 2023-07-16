@@ -9,25 +9,33 @@ const getPokemonFullList = async () => {
   }
 }
 
-
 const drawPokemons = (fullList) =>{
     for(const data of fullList){
-        let characterCard1$$ = document.createElement("figure");
+      const colors = ["aliceblue","antiquewhite","aqua","aquamarine","azure","beige",
+      "bisque","black","blanchedalmond","blue","blueviolet","brown","burlywood","cadetblue",
+      "chartreuse","chocolate","coral","cornflowerblue","cornsilk","crimson","cyan","darkblue",
+      "darkcyan","darkgoldenrod","darkgray","darkgreen","darkgrey","darkkhaki","darkmagenta",
+      "darkolivegreen","darkorange","darkorchid","darkred","darksalmon","darkseagreen","darkslateblue",
+      "darkslategray","darkslategrey","darkturquoise","darkviolet","deeppink","deepskyblue","dimgray",
+      "dimgrey","dodgerblue","firebrick","floralwhite","forestgreen","fuchsia","gainsboro",
+      ];
+      const randomIndex = Math.floor(Math.random() * colors.length);
+      const randomColor = colors[randomIndex];
+
+      let characterCard1$$ = document.createElement("figure");
         characterCard1$$.innerHTML = `
             <div>
-            <img src="${data.sprites.front_default}" alt="${data.name}">
+            <img  content: url("../../public/img/pokeball.png"); src="${data.sprites.front_default}" alt="${data.name}">
             <h2>${data.name.toUpperCase()}</h2>
             </div>
             <div>
-            <p> Este pokemon se llama ${
+            <article> Este pokemon se llama ${
               data.name.charAt(0).toUpperCase() + data.name.slice(1)
-            };</p>
-            <p>y es de tipo ${data.types[0].type.name} </p>
+            };</article>
+            <p style="color:${randomColor}"> y es de tipo ${data.types[0].type.name} </p>
             </div>;
     `;
-        // characterCard2$$.innerHTML = `
-        //   <p> Este pokemon se llama ${data.name.charAt(0).toUpperCase() + data.name.slice(1)};</p>
-        //   <p>y es de tipo ${data.types[0].type.name} </p>`;
+
         main$$.appendChild(characterCard1$$);
   }
   // return fullList.map((data) => ({
