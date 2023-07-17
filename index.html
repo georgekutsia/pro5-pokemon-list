@@ -1,20 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./styles/style.css">
-  <script src="./index.js" defer></script>
-  <title>Document</title>
-</head>
-<body>
-  <header class="header"></header>
-  <!-- <input type="text" class="text"> -->
-  <main  class="main"> 
-    <div class="main-div1">
-    </div>
-    <img  src="" alt="">
-  </main>
-  <footer class="footer"> </footer>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Lugrasimo&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./constants.js" defer></script>
+    <script src="./index.js" defer></script>
+    <script src="./todo-list.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header-h1">Pokedex Rumble Stumble Fighting Ring</h1>
+      <ul class="header-ul">
+        <li id="all-pokemon" style="--i: #ff5555; --j: #ffd3d3">
+          <span class="title">All Pokemon</span>
+        </li>
+        <li id="all-tasks" style="--i: #56ccf2; --j: #2f80ed">
+          <span class="title">message</span>
+        </li>
+        <li style="--i: #e54c00f1; --j: #ff5e62">
+          <span class="title">video</span>
+        </li>
+        <li style="--i: #dcf7d9; --j: #7ee8fa">
+          <span class="title">photo</span>
+        </li>
+        <li style="--i: #f53575; --j: #fc00e3">
+          <span class="title">favorite</span>
+        </li>
+        <li style="--i: #fbff00; --j: #00ff04">
+          <span class="title">favorite</span>
+        </li>
+      </ul>
+      <div class="header-div0">
+        <img id="loading-image" alt="loading-chain" />
+      </div>
+      <div class="header-div1">
+        <div id="input-box">
+          <div id="input-space">
+            <input id="input-name" type="text" />
+            <h3 id="input-h3"></h3>
+          </div>
+          <h5 id="input-text">Puedes filtrar por nombre o por tipo</h5>
+        </div>
+        <img
+          id="not-found-img"
+          src="./public/img/not-found-pokemon.png"
+          alt="not-found-pokemon"
+        />
+      </div>
+    </header>
+    <!-- <input type="text" class="text"> -->
+    <main class="main">
+      <div class="main-div0">
+        <h1>TODO List</h1>
+        <div class="main-div0-div">
+          <form class="form-1">
+            <input id="input-todo" type="text" placeholder="Add task..." />
+            <button id="btn-add">+</button>
+          </form>
+        </div>
+        <div class="main-div0-div">
+          <ul class="main-div0-div-ul" id="ul-todo">
+          </ul>
+        </div>
+        <div class="empty">
+          <p>All tasks are completed</p>
+        </div>
+      </div>
+      <disv class="main-div1"></disv>
+      <img src="" alt="" />
+    </main>
+    <footer class="footer"></footer>
+  </body>
 </html>

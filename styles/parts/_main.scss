@@ -31,16 +31,16 @@
         animation: gradientAnimation 5s infinite;
       }
       @keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
       article{
         font-size: 25px;
         color: white;
@@ -51,33 +51,14 @@
         text-shadow: 1px 1px white;
       }
       img{
-        content: url("../../public/img/pokeball.png");
-        width: 230px;
+        width: 210px;
         margin-top: 20px;
-        margin-bottom: -20px;
-        animation: turn 15s infinite;
-      }
-      img:hover{
-      content: none;
-        animation: none;
-      width: 220px;
+        margin-bottom: -10px;
+        transition: 1s ease-in-out;
       }
     }
     div{
     margin-top: 35px;
     }
-  }
-}
-
-
-@keyframes turn {
-  0%{
-    transform: rotate(360deg);
-  }
-  50%{
-    transform: rotate(0deg);
-  }
-  100%{
-    transform: rotate(360deg);
   }
 }

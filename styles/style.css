@@ -1,6 +1,140 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px 0px;
+  min-height: 100vh;
+  flex-direction: column;
+  background-image: url("../../public/img/background-stadium.jpg");
+  background-repeat: repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+body .header-h1 {
+  color: white;
+  padding: 50px 0px;
+  font-size: 50px;
+  font-family: Lobster, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+body .header-div0 {
+  display: flex;
+  justify-content: space-around;
+}
+body .header-div0 #loading-image {
+  display: none;
+  width: 300px;
+}
+body .header-div1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+body .header-div1 #input-box {
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+body .header-div1 #input-box #input-text {
+  display: none;
+  padding-left: 10px;
+}
+body .header-div1 #input-box #input-space {
+  background-color: red;
+  position: relative;
+}
+body .header-div1 #input-box #input-space h3 {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  font-size: 24px;
+  color: grey;
+}
+body .header-div1 input {
+  width: 400px;
+  display: none;
+  height: 30px;
+  font-size: 20px;
+}
+body .header-div1 img {
+  display: none;
+}
+body .header-ul {
+  position: relative;
+  display: flex;
+  gap: 25px;
+}
+body .header-ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  list-style: none;
+  width: 100px;
+  height: 150px;
+  background-image: url("../../public/img/pokeball.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border-radius: 60px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+body .header-ul li:hover {
+  width: 280px;
+  height: 110px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
+}
+body .header-ul li::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 60px;
+  background: linear-gradient(45deg, var(--i), var(--j));
+  opacity: 0;
+  transition: 0.5s;
+}
+body .header-ul li:hover::before {
+  opacity: 1;
+}
+body .header-ul li span {
+  position: absolute;
+}
+body .header-ul li .title {
+  color: #fff;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transform: scale(0);
+  transition: 0.5s;
+  transition-delay: 0s;
+}
+body .header-ul li:hover .title {
+  transform: scale(1);
+  transition-delay: 0.25s;
+}
+
+.main-div0 {
+  display: none;
+}
+.main-div0 h1 {
+  color: blue;
+}
+.main-div0-div-ul li {
+  background-image: url("../../public/img/note-dexxx.png");
+  background-size: contain;
+  height: 179px;
+  width: 420px;
+  padding-top: 50px;
+  font-size: 20px;
 }
 
 .main {
@@ -58,29 +192,11 @@
   text-shadow: 1px 1px white;
 }
 .main-div1 figure img {
-  content: url("../../public/img/pokeball.png");
-  width: 230px;
+  width: 210px;
   margin-top: 20px;
-  margin-bottom: -20px;
-  animation: turn 15s infinite;
-}
-.main-div1 figure img:hover {
-  content: none;
-  animation: none;
-  width: 220px;
+  margin-bottom: -10px;
+  transition: 1s ease-in-out;
 }
 .main-div1 div {
   margin-top: 35px;
-}
-
-@keyframes turn {
-  0% {
-    transform: rotate(360deg);
-  }
-  50% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }/*# sourceMappingURL=style.css.map */
