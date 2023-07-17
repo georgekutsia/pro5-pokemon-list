@@ -18,69 +18,29 @@ const dataPokemon = [
   },
   {
     id: 4,
-    name: "Dragoncete",
-    img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590860/games/match-pokemon/card-8_x2st1r.webp",
+    name: "Chien-piao",
+    img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590861/games/match-pokemon/card-11_pqwdmg.png",
   },
-  // {
-  //   id: 5,
-  //   name: "Bulbasur",
-  //   img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590861/games/match-pokemon/card-1_x0in1x.jpg",
-  // },
-  // {
-  //   id: 6,
-  //   name: "Delphox",
-  //   img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590861/games/match-pokemon/card-13_xahbf2.jpg",
-  // },
-  // {
-  //   id: 7,
-  //   name: "Charizard",
-  //   img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590861/games/match-pokemon/card-2_nkp2at.png",
-  // },
-  // {
-  //   id: 8,
-  //   name: "Lugia",
-  //   img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590861/games/match-pokemon/card-12_wclzce.jpg",
-  // },
-  // {
-  //   id: 9,
-  //   name: "Chien-pao",
-  //   img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590861/games/match-pokemon/card-11_pqwdmg.png",
-  // },
-  // {
-  //   id: 10,
-  //   name: "Chi-yu",
-  //   img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590862/games/match-pokemon/card-9_vh5go0.png",
-  // },
-  // {
-  //   id: 11,
-  //   name: "Araquanid",
-  //   img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590862/games/match-pokemon/card-10_yo2uoe.png",
-  // },
-  // {
-  //   id: 12,
-  //   name: "Blastoise",
-  //   img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590861/games/match-pokemon/card-14_wvnq2i.jpg",
-  // },
-  // {
-  //   id: 13,
-  //   name: "Mew-to",
-  //   img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590862/games/match-pokemon/card-3_bcjcpu.png",
-  // },
-  // {
-  //   id: 14,
-  //   name: "Pikachu",
-  //   img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590864/games/match-pokemon/card-4_xjq7ii.png",
-  // },
-  // {
-  //   id: 15,
-  //   name: "Jolteon",
-  //   img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590868/games/match-pokemon/card-16_gx5dkk.jpg",
-  // },
-  // {
-  //   id: 16,
-  //   name: "Hormigatron",
-  //   img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590868/games/match-pokemon/card-15_ksifcn.webp",
-  // },
+  {
+    id: 5,
+    name: "Bulbasur",
+    img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590861/games/match-pokemon/card-1_x0in1x.jpg",
+  },
+  {
+    id: 6,
+    name: "Delphox",
+    img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590861/games/match-pokemon/card-13_xahbf2.jpg",
+  },
+  {
+    id: 7,
+    name: "Charizard",
+    img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590861/games/match-pokemon/card-2_nkp2at.png",
+  },
+  {
+    id: 8,
+    name: "Lugia",
+    img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590861/games/match-pokemon/card-12_wclzce.jpg",
+  },
   {
     id: 17,
     name: "Squirtle",
@@ -98,69 +58,29 @@ const dataPokemon = [
   },
   {
     id: 20,
-    name: "Dragoncete",
-    img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590860/games/match-pokemon/card-8_x2st1r.webp",
+    name: "Chien-piao",
+    img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590861/games/match-pokemon/card-11_pqwdmg.png",
   },
-  // {
-  //   id: 21,
-  //   name: "Bulbasur",
-  //   img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590861/games/match-pokemon/card-1_x0in1x.jpg",
-  // },
-  // {
-  //   id: 22,
-  //   name: "Delphox",
-  //   img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590861/games/match-pokemon/card-13_xahbf2.jpg",
-  // },
-  // {
-  //   id: 23,
-  //   name: "Charizard",
-  //   img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590861/games/match-pokemon/card-2_nkp2at.png",
-  // },
-  // {
-  //   id: 24,
-  //   name: "Lugia",
-  //   img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590861/games/match-pokemon/card-12_wclzce.jpg",
-  // },
-  // {
-  //   id: 25,
-  //   name: "Chien-pao",
-  //   img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590861/games/match-pokemon/card-11_pqwdmg.png",
-  // },
-  // {
-  //   id: 26,
-  //   name: "Chi-yu",
-  //   img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590862/games/match-pokemon/card-9_vh5go0.png",
-  // },
-  // {
-  //   id: 27,
-  //   name: "Araquanid",
-  //   img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590862/games/match-pokemon/card-10_yo2uoe.png",
-  // },
-  // {
-  //   id: 28,
-  //   name: "Blastoise",
-  //   img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590861/games/match-pokemon/card-14_wvnq2i.jpg",
-  // },
-  // {
-  //   id: 29,
-  //   name: "Mew-to",
-  //   img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590862/games/match-pokemon/card-3_bcjcpu.png",
-  // },
-  // {
-  //   id: 30,
-  //   name: "Pikachu",
-  //   img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590864/games/match-pokemon/card-4_xjq7ii.png",
-  // },
-  // {
-  //   id: 31,
-  //   name: "Jolteon",
-  //   img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590868/games/match-pokemon/card-16_gx5dkk.jpg",
-  // },
-  // {
-  //   id: 32,
-  //   name: "Hormigatron",
-  //   img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590868/games/match-pokemon/card-15_ksifcn.webp",
-  // },
+  {
+    id: 21,
+    name: "Bulbasur",
+    img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590861/games/match-pokemon/card-1_x0in1x.jpg",
+  },
+  {
+    id: 22,
+    name: "Delphox",
+    img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590861/games/match-pokemon/card-13_xahbf2.jpg",
+  },
+  {
+    id: 23,
+    name: "Charizard",
+    img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590861/games/match-pokemon/card-2_nkp2at.png",
+  },
+  {
+    id: 24,
+    name: "Lugia",
+    img: "https://res.cloudinary.com/dfrda73uc/image/upload/v1689590861/games/match-pokemon/card-12_wclzce.jpg",
+  },
 ];
 
 
@@ -172,13 +92,18 @@ const dataPokemon = [
 dataPokemon.sort(() => 0.5 - Math.random());
 
 const grid$$ = document.querySelector('#match-cards');
-const score$$ = document.querySelector('#match-score');
+const matchWining$$ = document.querySelector('#match-score');
 const attempts$$ = document.querySelector('#match-try');
 
 let matchChosenCards = [];
 let matchWonCards = [];
 
 function createBoard() {
+    match$$.style.display = "block";
+    main0$$.style.display = "none";
+    main1$$.style.display = "none";
+  body$$.style.backgroundImage = 'url("./public/img/background-match.jpeg")';
+
   for (let i = 0; i < dataPokemon.length; i++) {
     const matchCard = dataPokemon[i];
     const newCard$$ = document.createElement("img");
@@ -186,23 +111,34 @@ function createBoard() {
     newCard$$.setAttribute("data-id", matchCard.id);
     newCard$$.addEventListener("click", (event) => flipNewCard(event.target, i));
     grid$$.appendChild(newCard$$);
+
   }
 }
 
 
+
+// Objeto de mapeo de nombres de Pokémon a las rutas de imagen
+const pokemonImages = {
+  Squirtle: "../public/img/loading12.gif",
+  Meowth: "../public/img/loading13.gif",
+  Lickitung: "../public/img/loading14.gif",
+  "Chien-piao": "../public/img/loading18.gif",
+  Bulbasur: "../public/img/loading15.gif",
+  Delphox: "../public/img/loading16.gif",
+  Charizard: "../public/img/loading2.gif",
+  Lugia: "../public/img/loading17.gif"
+};
 
 function checkForMatch() {
   const optionOne = matchChosenCards[0];
   const optionTwo = matchChosenCards[1];
   const cardOne$$ = document.querySelector('[data-id="' + optionOne.id + '"]');
   const cardTwo$$ = document.querySelector('[data-id="' + optionTwo.id + '"]');
-  console.log(cardTwo$$)
-  if (optionOne.id === optionTwo.id) {
-    cardOne$$.setAttribute("src", "../public/img/pokeball.png");
-    cardTwo$$.setAttribute("src", "../public/img/pokeball.png");
-  } else if (optionOne.name === optionTwo.name && optionOne.id !== optionTwo.id) {
-    cardOne$$.setAttribute("src", "../public/img/loading2.gif");
-    cardTwo$$.setAttribute("src", "../public/img/loading2.gif");
+  
+  if (optionOne.name === optionTwo.name && optionOne.id !== optionTwo.id && pokemonImages.hasOwnProperty(optionOne.name)) {
+    const loadingImg = pokemonImages[optionOne.name];
+    cardOne$$.setAttribute("src", loadingImg);
+    cardTwo$$.setAttribute("src", loadingImg);
     cardOne$$.removeEventListener("click", flipNewCard);
     cardTwo$$.removeEventListener("click", flipNewCard);
     matchWonCards.push(optionOne);
@@ -210,8 +146,9 @@ function checkForMatch() {
     cardOne$$.setAttribute("src", "../public/img/pokeball.png");
     cardTwo$$.setAttribute("src", "../public/img/pokeball.png");
   }
-      matchChosenCards = [];
-      matchCheckScore();
+  
+  matchChosenCards = [];
+  matchCheckScore();
 }
 
 let flipNewCardEnabled = true;
@@ -236,12 +173,13 @@ function flipNewCard(choseCard, i) {
   }
 }
 function matchCheckScore() {
-  score$$.textContent = matchWonCards.length;
   attempts$$.textContent = Number(attempts$$.textContent) + 1;
   if (matchWonCards.length === dataPokemon.length / 2) {
-    score$$.textContent = "A topeeee!!! todo bien!";
+    matchWining$$.textContent = "Espectacular!";
   }
 }
 
-createBoard();
 
+allMatch$$.addEventListener("click", () => createBoard());
+
+console.log(allMatch$$)

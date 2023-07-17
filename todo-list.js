@@ -32,6 +32,7 @@ btnAdd$$.addEventListener("click", (event) => {
 
 const showTasks = () => {
   h1$$.innerText = "Your library! make your notes!";
+  match$$.style.display = "none";
   main0$$.style.display = "block";
   main1$$.style.display = "none";
   headerDiv$$.style.display = "none";

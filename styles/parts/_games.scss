@@ -1,9 +1,35 @@
-.main-div1{
-  display: flex;
-  flex-wrap: wrap;
+.match-game{
+  display: none;
+  span{
+    font-size: 40px;
+    animation: dancing 1s infinite;
+    color: white;
+  }
+  h3{
+    font-size: 24px;
+  }
   &-grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 590px;
+    background-color: rgba(0, 38, 100, 0.318);
+    border-radius: 40px;
+    padding-bottom: 10px;
   }
   img{
-    width: 170px;
+    width: 120px;
+    margin-top: 10px;
+  }
+}
+@keyframes dancing {
+  0% {
+    transform: rotate(-2deg) translateX(-2px) rotate(12deg);
+  }
+  50% {
+    transform: rotate(2deg) translateX(12px) rotate(-12deg);
+  }
+  100% {
+    transform: rotate(-2deg) translateX(-2px) rotate(12deg);
   }
 }

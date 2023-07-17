@@ -140,6 +140,13 @@ body .header-ul li:hover .title {
 }
 .main-div0 h1 {
   color: blue;
+  font-size: 60px;
+}
+.main-div0-div button {
+  font-size: 28px;
+  color: white;
+  background-color: transparent;
+  border: none;
 }
 .main-div0-div-ul {
   display: flex;
@@ -176,6 +183,7 @@ body .header-ul li:hover .title {
 
 .main {
   padding: 0px 5%;
+  display: flex;
 }
 .main-div1 {
   margin: 10px;
@@ -238,10 +246,39 @@ body .header-ul li:hover .title {
   margin-top: 35px;
 }
 
-.main-div1 {
+.match-game {
+  display: none;
+}
+.match-game span {
+  font-size: 40px;
+  animation: dancing 1s infinite;
+  color: white;
+}
+.match-game h3 {
+  font-size: 24px;
+}
+.match-game-grid {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 590px;
+  background-color: rgba(0, 38, 100, 0.318);
+  border-radius: 40px;
+  padding-bottom: 10px;
 }
-.main-div1 img {
-  width: 170px;
+.match-game img {
+  width: 120px;
+  margin-top: 10px;
+}
+
+@keyframes dancing {
+  0% {
+    transform: rotate(-2deg) translateX(-2px) rotate(12deg);
+  }
+  50% {
+    transform: rotate(2deg) translateX(12px) rotate(-12deg);
+  }
+  100% {
+    transform: rotate(-2deg) translateX(-2px) rotate(12deg);
+  }
 }/*# sourceMappingURL=style.css.map */

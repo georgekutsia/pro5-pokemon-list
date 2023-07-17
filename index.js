@@ -16,6 +16,7 @@ const drawPokemons = (fullList) =>{
     main1$$.innerHTML = "";
     main0$$.style.display = "none";
     main1$$.style.display = "flex";
+    match$$.style.display = "none";
     headerDiv$$.style.display = "flex"
     const loadingImage$$ = document.querySelector("#loading-image");
     const randomNumber = Math.floor(Math.random() * 10 + 1)
