@@ -5,15 +5,36 @@
       color: blue;
     }
     &-div{
-
       &-ul{
-        li{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      li{
       background-image: url("../../public/img/note-dexxx.png");
       background-size:contain;
       height: 179px;
       width: 420px;
-      padding-top: 50px;
+      padding-top: 57px;
       font-size: 20px;
+      flex-wrap: wrap;
+      position: relative;
+      button{
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        width: 60px;
+        height: auto;
+        font-size: 30px;
+        color: rgb(255, 255, 255);
+        text-shadow: 1px 1px greenyellow;
+        background-color: transparent;
+        border: none;
+        transition: 0.5s ease-out;
+      }
+      button:hover{
+        text-shadow: 3px 3px green;
+        color: rgb(255, 121, 121);
+      }
         }
       }
     }

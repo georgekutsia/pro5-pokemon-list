@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+li {
+  list-style-type: none;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -19,9 +23,12 @@ body {
 }
 body .header-h1 {
   color: white;
-  padding: 50px 0px;
+  margin: 50px 0px;
+  padding: 10px 30px;
   font-size: 50px;
   font-family: Lobster, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: rgba(0, 0, 0, 0.509);
+  border-radius: 15px;
 }
 body .header-div0 {
   display: flex;
@@ -43,6 +50,12 @@ body .header-div1 #input-box {
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+body .header-div1 #input-box h5 {
+  color: white;
+  background-color: rgba(66, 66, 66, 0.513);
+  border-radius: 20px;
+  margin-top: 10px;
 }
 body .header-div1 #input-box #input-text {
   display: none;
@@ -128,13 +141,37 @@ body .header-ul li:hover .title {
 .main-div0 h1 {
   color: blue;
 }
+.main-div0-div-ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
 .main-div0-div-ul li {
   background-image: url("../../public/img/note-dexxx.png");
   background-size: contain;
   height: 179px;
   width: 420px;
-  padding-top: 50px;
+  padding-top: 57px;
   font-size: 20px;
+  flex-wrap: wrap;
+  position: relative;
+}
+.main-div0-div-ul li button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 60px;
+  height: auto;
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px greenyellow;
+  background-color: transparent;
+  border: none;
+  transition: 0.5s ease-out;
+}
+.main-div0-div-ul li button:hover {
+  text-shadow: 3px 3px green;
+  color: rgb(255, 121, 121);
 }
 
 .main {
@@ -199,4 +236,12 @@ body .header-ul li:hover .title {
 }
 .main-div1 div {
   margin-top: 35px;
+}
+
+.main-div1 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.main-div1 img {
+  width: 170px;
 }/*# sourceMappingURL=style.css.map */

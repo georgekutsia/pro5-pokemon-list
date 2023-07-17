@@ -1,5 +1,5 @@
 
-let intervalTimer = 2000;
+let intervalTimer = 200;
 //intervali timer marca la primera carga, para la animación, pero para los siguientes filtros
 //no me hace falta que sea tan largo, así que es una constante que cambio tras el primer mapeo 
 
@@ -24,6 +24,7 @@ const drawPokemons = (fullList) =>{
   setTimeout( ()=> {
     for(const data of fullList){
     const randomIndex = Math.floor(Math.random() * colors.length);
+
     const randomColor = colors[randomIndex];
     let characterCard1$$ = document.createElement("figure");
     characterCard1$$.innerHTML = `
@@ -36,8 +37,14 @@ const drawPokemons = (fullList) =>{
       data.name.charAt(0).toUpperCase() + data.name.slice(1)
     };</article>
     <p style="color:${randomColor}"> y es tipo ${data.types[0].type.name} </p>
+    
     </div>
     `
+    // for (const abil of data.abilities) {
+    //   let listAbs$$ = document.createElement("article");
+    //   listAbs$$.textContent = `${abil.ability.name}`;
+    //   characterCard1$$.appendChild(listAbs$$);
+    // }
     main1$$.appendChild(characterCard1$$);
   }
   if(fullList.length > 0){
@@ -51,11 +58,16 @@ const drawPokemons = (fullList) =>{
   allPokemon$$.style.width = '50%';
   allPokemon$$.style.maxWidth = '340px';
   allPokemon$$.style.maxHeight = '200px';
+  allTasks$$.style.backgroundImage = 'url("./public/img/pokeball.png")';
+  allTasks$$.style.width = "100px";
+
   body$$.style.backgroundImage = 'url("./public/img/background-main.webp")';
   body$$.style.backgroundSize = "100%"
   input1$$.style.display = "block";
   inputText1$$.style.display = "block"
   h1$$.style.color = "black"
+  h1$$.innerText = "First generation of Pokemon!"
+  h1$$.style.backgroundColor = "rgba(255, 255, 255, 0.509)"
 }, intervalTimer)
 intervalTimer = 0
 }

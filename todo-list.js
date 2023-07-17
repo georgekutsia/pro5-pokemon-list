@@ -5,7 +5,7 @@ const addTask = (input) => {
   let deleteBtn$$ = document.createElement("button");
   
   taskText$$.innerText = `${input}`;
-  deleteBtn$$.innerText = "-";
+  deleteBtn$$.innerHTML = `<i class="fa-solid fa-dumpster"></i>`;
   
   deleteBtn$$.addEventListener("click", () => {
     taskList.splice(taskList.indexOf(newTask$$), 1); 
@@ -31,9 +31,17 @@ btnAdd$$.addEventListener("click", (event) => {
 
 
 const showTasks = () => {
+  h1$$.innerText = "Your library! make your notes!";
   main0$$.style.display = "block";
   main1$$.style.display = "none";
   headerDiv$$.style.display = "none";
+  body$$.style.backgroundImage = 'url("./public/img/background-library.jpeg")';
+  allTasks$$.style.backgroundImage = 'url("./public/img/open.png")';
+  allTasks$$.style.width = "50%";
+  allTasks$$.style.maxWidth = "340px";
+  allTasks$$.style.maxHeight = "200px";
+  allPokemon$$.style.backgroundImage = 'url("./public/img/pokeball.png")';
+  allPokemon$$.style.width = "100px";
 }
 
 

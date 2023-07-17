@@ -6,24 +6,24 @@
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lobster&family=Lugrasimo&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Lugrasimo&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <script src="./data/match.js" type="module"></script>
     <script src="./constants.js" defer></script>
     <script src="./index.js" defer></script>
     <script src="./todo-list.js" defer></script>
+    <script src="./games/match.js" defer></script>
     <title>Document</title>
   </head>
   <body>
     <header class="header">
-      <h1 class="header-h1">Pokedex Rumble Stumble Fighting Ring</h1>
+      <h1 class="header-h1">Pokedex Rumble Stumble Gumble Games!</h1>
       <ul class="header-ul">
         <li id="all-pokemon" style="--i: #ff5555; --j: #ffd3d3">
-          <span class="title">All Pokemon</span>
+          <span class="title">Pokemons</span>
         </li>
         <li id="all-tasks" style="--i: #56ccf2; --j: #2f80ed">
-          <span class="title">message</span>
+          <span class="title">Librería</span>
         </li>
         <li style="--i: #e54c00f1; --j: #ff5e62">
           <span class="title">video</span>
@@ -62,7 +62,7 @@
         <h1>TODO List</h1>
         <div class="main-div0-div">
           <form class="form-1">
-            <input id="input-todo" type="text" placeholder="Add task..." />
+            <input id="input-todo" maxlength="130" minlength="1" type="text" placeholder="Add task..." />
             <button id="btn-add">+</button>
           </form>
         </div>
@@ -74,8 +74,11 @@
           <p>All tasks are completed</p>
         </div>
       </div>
-      <disv class="main-div1"></disv>
-      <img src="" alt="" />
+      <disv class="main-div1">
+            <h3>Score:<span  id="match-score">0</span></h3>
+            <h3>Attempts:<span  id="match-try">0</span></h3>
+            <div id="match-cards" class="main-div1-grid"></div>
+      </disv>
     </main>
     <footer class="footer"></footer>
   </body>
