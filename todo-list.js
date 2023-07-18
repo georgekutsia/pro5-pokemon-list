@@ -24,7 +24,6 @@ btnAdd$$.addEventListener("click", (event) => {
   for (let i = 0; i < taskList.length; i++) {
     const tasks = taskList[i];
     ulToDo$$.appendChild(tasks);
-    console.log(tasks);
   }
   inputToDo$$.value = "";
 });

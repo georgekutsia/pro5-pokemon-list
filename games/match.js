@@ -179,5 +179,3 @@ function matchCheckScore() {
 
 
 allMatch$$.addEventListener("click", () => createBoard());
-
-console.log(allMatch$$)

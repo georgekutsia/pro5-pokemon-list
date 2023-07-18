@@ -303,4 +303,9 @@ body .header-ul li:hover .title {
   min-width: 500px;
   min-height: 500px;
   border-radius: 20px;
+}
+
+#shooter-start {
+  padding: 10px 20px;
+  font-size: 30px;
 }/*# sourceMappingURL=style.css.map */
