@@ -91,9 +91,6 @@ const dataPokemon = [
 
 dataPokemon.sort(() => 0.5 - Math.random());
 
-const grid$$ = document.querySelector('#match-cards');
-const matchWining$$ = document.querySelector('#match-score');
-const attempts$$ = document.querySelector('#match-try');
 
 let matchChosenCards = [];
 let matchWonCards = [];
@@ -175,7 +172,8 @@ function flipNewCard(choseCard, i) {
 function matchCheckScore() {
   attempts$$.textContent = Number(attempts$$.textContent) + 1;
   if (matchWonCards.length === dataPokemon.length / 2) {
-    matchWining$$.textContent = "Espectacular!";
+    espectacular$$.style.display = "block";
+    grid$$.style.display = "none"
   }
 }
 

@@ -13,6 +13,9 @@
     <script src="./index.js" defer></script>
     <script src="./todo-list.js" defer></script>
     <script src="./games/match.js" defer></script>
+    <script src="./games/player.js" defer></script>
+    <script src="./games/game.js" defer></script>
+    <script src="./games/shooter.js" type="module"></script>
     <title>Document</title>
   </head>
   <body>
@@ -29,16 +32,16 @@
           <span class="title">Match!</span>
         </li>
         <li style="--i: #dcf7d9; --j: #7ee8fa">
-          <span class="title">photo</span>
+          <span class="title">Nada que ver</span>
         </li>
         <li style="--i: #f53575; --j: #fc00e3">
-          <span class="title">favorite</span>
+          <span class="title">Botón!</span>
         </li>
         <li style="--i: #fbff00; --j: #00ff04">
-          <span class="title">favorite</span>
+          <span class="title">Nanainonai</span>
         </li>
         <li style="--i: #2d2d0e; --j: #ff5e62">
-          <span class="title">favorite</span>
+          <span class="title">Por rellenar!</span>
         </li>
       </ul>
       <div class="header-div0">
@@ -73,15 +76,21 @@
         </div>
       </div>
       <div class="main-div1">
+        <div class="main-div1-div"></div>
       </div>
-      <div class="match-game">
+      <div  class="match-game">
         <span id="match-score"></span>
         <h3>Intentos:<span  id="match-try">0</span></h3>
         <div id="match-cards" class="match-game-grid"></div>
+        <img id="img-espectacular" src="./public/img/espectacular.png" alt="espectacular">
       </div>
       <div class="main-div2">
     </div>
-    </main>
-    <footer class="footer"></footer>
+  </main>
+  <div>
+      <canvas id="canvas"></canvas>
+      <button id="shooter-start">Start</button>
+  </div>
+  <footer class="footer"></footer>
   </body>
 </html>

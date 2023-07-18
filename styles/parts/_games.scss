@@ -2,7 +2,6 @@
   display: none;
   span{
     font-size: 40px;
-    animation: dancing 1s infinite;
     color: white;
   }
   h3{
@@ -21,6 +20,10 @@
     width: 120px;
     margin-top: 10px;
   }
+  #img-espectacular{
+    display: none;
+    width: 500px;
+  }
 }
 @keyframes dancing {
   0% {
@@ -32,4 +35,12 @@
   100% {
     transform: rotate(-2deg) translateX(-2px) rotate(12deg);
   }
+}
+
+#canvas {
+  width: 70vw;
+  height: 1vh;
+  min-width: 500px;
+  min-height: 500px;
+  border-radius: 20px;
 }

@@ -139,11 +139,13 @@ body .header-ul li:hover .title {
   display: none;
 }
 .main-div0 h1 {
-  color: blue;
+  color: white;
   font-size: 60px;
+  animation: dancing 1s infinite;
+  margin-bottom: 15px;
 }
 .main-div0-div button {
-  font-size: 28px;
+  font-size: 38px;
   color: white;
   background-color: transparent;
   border: none;
@@ -181,6 +183,17 @@ body .header-ul li:hover .title {
   color: rgb(255, 121, 121);
 }
 
+@keyframes dancing {
+  0% {
+    transform: rotate(-2deg) translateX(-2px) rotate(5deg);
+  }
+  50% {
+    transform: rotate(2deg) translateX(12px) rotate(-5deg);
+  }
+  100% {
+    transform: rotate(-2deg) translateX(-2px) rotate(5deg);
+  }
+}
 .main {
   padding: 0px 5%;
   display: flex;
@@ -189,7 +202,6 @@ body .header-ul li:hover .title {
   margin: 10px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 }
 .main-div1 figure {
   background-image: url("../../public/img/pokedexx.png");
@@ -251,7 +263,6 @@ body .header-ul li:hover .title {
 }
 .match-game span {
   font-size: 40px;
-  animation: dancing 1s infinite;
   color: white;
 }
 .match-game h3 {
@@ -270,6 +281,10 @@ body .header-ul li:hover .title {
   width: 120px;
   margin-top: 10px;
 }
+.match-game #img-espectacular {
+  display: none;
+  width: 500px;
+}
 
 @keyframes dancing {
   0% {
@@ -281,4 +296,11 @@ body .header-ul li:hover .title {
   100% {
     transform: rotate(-2deg) translateX(-2px) rotate(12deg);
   }
+}
+#canvas {
+  width: 70vw;
+  height: 1vh;
+  min-width: 500px;
+  min-height: 500px;
+  border-radius: 20px;
 }/*# sourceMappingURL=style.css.map */

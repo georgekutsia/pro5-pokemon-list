@@ -2,13 +2,14 @@
   &-div0{
     display: none;
     h1{
-      color: blue;
+      color: white;
       font-size: 60px;
+      animation: dancing 1s infinite;
+      margin-bottom: 15px
     }
     &-div{
-
       button{
-        font-size: 28px;
+        font-size: 38px;
         color: white;
         background-color: transparent;
         border: none;
@@ -50,3 +51,15 @@
 
 }
 
+
+@keyframes dancing {
+  0% {
+    transform: rotate(-2deg) translateX(-2px) rotate(5deg);
+  }
+  50% {
+    transform: rotate(2deg) translateX(12px) rotate(-5deg);
+  }
+  100% {
+    transform: rotate(-2deg) translateX(-2px) rotate(5deg);
+  }
+}
