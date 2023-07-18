@@ -1,5 +1,5 @@
 
-let intervalTimer = 200;
+let intervalTimer = 2000;
 //intervali timer marca la primera carga, para la animación, pero para los siguientes filtros
 //no me hace falta que sea tan largo, así que es una constante que cambio tras el primer mapeo 
 
