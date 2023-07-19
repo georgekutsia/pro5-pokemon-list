@@ -83,14 +83,7 @@ const dataPokemon = [
   },
 ];
 
-
-
-
-
-
-
 dataPokemon.sort(() => 0.5 - Math.random());
-
 
 let matchChosenCards = [];
 let matchWonCards = [];
@@ -99,7 +92,21 @@ function createBoard() {
     match$$.style.display = "block";
     main0$$.style.display = "none";
     main1$$.style.display = "none";
-  body$$.style.backgroundImage = 'url("./public/img/background-match.jpeg")';
+    main3$$.style.display = "none"
+    h1$$.innerText = "Encuentra cartas repetidas!";
+    body$$.style.backgroundImage = 'url("./public/img/background-match.jpeg")';
+    allPokemon$$.style.backgroundImage = 'url("./public/img/pokeball.png")';
+    allTasks$$.style.backgroundImage = 'url("./public/img/pokeball.png")';
+    allMatch$$.style.backgroundImage = 'url("./public/img/open.png")';
+    allMagikarp$$.style.backgroundImage = 'url("./public/img/pokeball.png")';
+
+    allMatch$$.style.width = "50%";
+    allMatch$$.style.maxWidth = "340px";
+    allMatch$$.style.maxHeight = "200px";
+
+    allMagikarp$$.style.width = "100px";
+    allPokemon$$.style.width = "100px";
+    allTasks$$.style.width = "100px";
 
   for (let i = 0; i < dataPokemon.length; i++) {
     const matchCard = dataPokemon[i];
@@ -127,18 +134,18 @@ const pokemonImages = {
 };
 
 function checkForMatch() {
-  const optionOne = matchChosenCards[0];
-  const optionTwo = matchChosenCards[1];
-  const cardOne$$ = document.querySelector('[data-id="' + optionOne.id + '"]');
-  const cardTwo$$ = document.querySelector('[data-id="' + optionTwo.id + '"]');
+  const cardOne = matchChosenCards[0];
+  const cardTwo = matchChosenCards[1];
+  const cardOne$$ = document.querySelector('[data-id="' + cardOne.id + '"]');
+  const cardTwo$$ = document.querySelector('[data-id="' + cardTwo.id + '"]');
   
-  if (optionOne.name === optionTwo.name && optionOne.id !== optionTwo.id && pokemonImages.hasOwnProperty(optionOne.name)) {
-    const loadingImg = pokemonImages[optionOne.name];
+  if (cardOne.name === cardTwo.name && cardOne.id !== cardTwo.id && pokemonImages.hasOwnProperty(cardOne.name)) {
+    const loadingImg = pokemonImages[cardOne.name];
     cardOne$$.setAttribute("src", loadingImg);
     cardTwo$$.setAttribute("src", loadingImg);
     cardOne$$.removeEventListener("click", flipNewCard);
     cardTwo$$.removeEventListener("click", flipNewCard);
-    matchWonCards.push(optionOne);
+    matchWonCards.push(cardOne);
   } else {
     cardOne$$.setAttribute("src", "../public/img/pokeball.png");
     cardTwo$$.setAttribute("src", "../public/img/pokeball.png");

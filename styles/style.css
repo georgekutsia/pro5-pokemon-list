@@ -13,7 +13,6 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 50px 0px;
   min-height: 100vh;
   flex-direction: column;
   background-image: url("../../public/img/background-stadium.jpg");
@@ -297,15 +296,46 @@ body .header-ul li:hover .title {
     transform: rotate(-2deg) translateX(-2px) rotate(12deg);
   }
 }
-#canvas {
+.main-div3 {
+  display: none;
+}
+.main-div3 #canvas {
+  display: none;
   width: 70vw;
   height: 50vh;
   min-width: 500px;
   min-height: 500px;
   border-radius: 20px;
 }
-
-#shooter-start {
+.main-div3 #shooter-start {
+  display: inline;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.28);
+  border-radius: 10px;
+  bottom: 25%;
+  left: 45%;
   padding: 10px 20px;
   font-size: 30px;
+  opacity: 1;
+  transition: 1s ease-in-out;
+}
+.main-div3 #shooter-start:hover {
+  opacity: 1;
+  scale: 1.2;
+}
+.main-div3 #shooter-restart {
+  display: none;
+  padding: 10px 20px;
+  font-size: 30px;
+}
+
+#team-rocket-end {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  display: none;
+}
+#team-rocket-end img {
+  width: 150%;
+  height: auto;
 }/*# sourceMappingURL=style.css.map */

@@ -14,7 +14,6 @@ const addTask = (input) => {
   
   newTask$$.appendChild(taskText$$);
   newTask$$.appendChild(deleteBtn$$);
-  
   taskList.push(newTask$$);
 };
 
@@ -30,18 +29,24 @@ btnAdd$$.addEventListener("click", (event) => {
 
 
 const showTasks = () => {
-  h1$$.innerText = "Your library! make your notes!";
+  h1$$.innerText = "Hey buenas! Crea tus notas";
   match$$.style.display = "none";
   main0$$.style.display = "block";
   main1$$.style.display = "none";
+  main3$$.style.display = "none";
   headerDiv$$.style.display = "none";
   body$$.style.backgroundImage = 'url("./public/img/background-library.jpeg")';
   allTasks$$.style.backgroundImage = 'url("./public/img/open.png")';
+  allPokemon$$.style.backgroundImage = 'url("./public/img/pokeball.png")';
+  allMatch$$.style.backgroundImage = 'url("./public/img/pokeball.png")';
+  allMagikarp$$.style.backgroundImage = 'url("./public/img/pokeball.png")';
   allTasks$$.style.width = "50%";
   allTasks$$.style.maxWidth = "340px";
   allTasks$$.style.maxHeight = "200px";
-  allPokemon$$.style.backgroundImage = 'url("./public/img/pokeball.png")';
   allPokemon$$.style.width = "100px";
+  allMatch$$.style.width = "100px";
+  allMagikarp$$.style.width = "100px";
+    
 }
 
 

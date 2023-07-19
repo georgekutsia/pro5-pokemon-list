@@ -1,17 +1,18 @@
 let width = 20
 let height = 20
+
 class Player {
   constructor(ctx) {
     this.ctx = ctx;
     this.x = 0;
     this.y = 50;
-    this.w = this.ctx.canvas.width / 15;
-    this.h = this.ctx.canvas.width / 15;
-    this.vx = 0.1;
+    this.w = this.ctx.canvas.width / 17;
+    this.h = this.ctx.canvas.width / 17;
+    this.vx = 0.05;
     this.vy = 0;
 
     this.g = 0.005;
-
+this.bla = false
     this.ay = 0;
     this.ax = 0;
     this.fastSwiming = 20;
@@ -29,7 +30,6 @@ class Player {
     this.down = 83;
     this.left = 65;
     this.right =68;
-    this.tired = 40;
     this.effort = 4;
     this.shooting = 66;
     this.inactive = true;
@@ -49,7 +49,7 @@ class Player {
     this.inactiveCountback = 3000;
     this.shootAmmo.volume = 0.07;
     this.audioNoAmmo.volume = 0.07;
-    this.megaShootAmmo.volume = 0.5;
+    this.megaShootAmmo.volume = 0.07;
   }
 
   draw() {
@@ -69,9 +69,9 @@ class Player {
 
     this.ctx.font = "10px Arial";
     this.ctx.fillStyle = "white";
-    this.ctx.fillText(`Salpicadura: ${this.amountOfAmmo.toString()}`, 230, 140);
-    this.ctx.fillText(`Puntos: ${this.killCount.toString()}`, 250, 130);
-    // this.ctx.fillText(`Bulala${Math.round(this.life * 100) / 100}`, 15, 50);
+    this.ctx.fillText(`Salpicadura: ${this.amountOfAmmo.toString()}`, 230, 130);
+    this.ctx.fillText(`Mega splash: ${this.amountOfMegaAmmo.toString()}`, 230, 140);
+    this.ctx.fillText(`Puntos: ${this.killCount.toString()}`, 250, 120);
     // energía
     this.ctx.fillStyle = "yellow";
     if(this.effort >= 30){
@@ -100,28 +100,47 @@ class Player {
       this.hit = 0
     }
 
-    if(this.killCount >= 10){
+    if(this.killCount != 0 && this.killCount % 10 === 0){
       this.img.src = "../public/img/gyrados.png"
-      this.w = this.ctx.canvas.width / 6;
-      this.h = this.ctx.canvas.width / 6;
+      this.w = this.ctx.canvas.width / 8;
+      this.h = this.ctx.canvas.width / 8;
       this.evolution = true;
       this.life = 60
       width = 80;
       height = 10;
     }
-      this.effort -= 0.03;
-
+    if(this.bla){
+      this.hit -= 0.03
+    }
+    if(this.evolution){
+      this.bla = true
+        setTimeout(() => {
+          this.bla = false
+          this.img.src = "../public/img/magikarp.png";
+          this.life = 40;
+          width = 20;
+          height = 20;
+          this.w = this.ctx.canvas.width / 15;
+          this.h = this.ctx.canvas.width / 15;
+          this.evolution = false;
+        }, 10000);
+    }
+      this.effort -= 0.015;
       if(this.effort <= 0){
         this.effort = 0
       }
       if(this.effort >= 40){
         this.effort = 40
       }
-      if(this.effort >= 30){
+      if(this.effort >= 38){
         this.inactive = false;
         setTimeout(() => {
           this.inactive = true
         }, this.inactiveCountback);
+      }
+      if(!this.inactive){
+        this.ctx.fillText(`¡Magikarp!`, this.x -5 , this.y - 2);
+
       }
   }
 
@@ -149,7 +168,7 @@ class Player {
     }
     if(this.y <= 30){
       this.effort +=0.02;
-      this.ay = 0.05
+      this.ay = 0.03
     }
 
     this.ammos.forEach((shoot) => {shoot.move();});
@@ -179,25 +198,28 @@ class Player {
   keyDown(key) {
     if (key === this.up && this.inactive ) {
       this.ay = -0.05;
-      this.effort += 1.4
+      this.effort += 0.8
     }
     if (key === this.left && this.inactive) {
       this.ax = -0.7;
-      this.effort += 0.9;
+      this.effort += 0.3;
     }
     if (key === this.right && this.inactive) {
       this.ax = +0.5;
-      this.effort += 0.9;
+      this.effort += 0.3;
     }
     if (key === this.down && this.inactive) {
       this.ay = 0.05;
-      this.effort += 0.9;
+      this.effort += 0.3;
     }
     if (key === this.shooting) {
       if(this.amountOfAmmo >= 1){
         this.shoot();
         this.amountOfAmmo -= 1;
-      this.effort += 2;
+        if(this.evolution){
+          this.extraShoot();
+        }
+      this.effort += 1;
       } else if (this.amountOfAmmo <= 0) {
         this.audioNoAmmo.play()
     }
@@ -206,7 +228,7 @@ class Player {
         if (this.amountOfMegaAmmo >= 1) {
           this.megaShoot();
           this.amountOfMegaAmmo -= 1;
-          this.effort += 2;
+          this.effort += 1;
         } else if (this.amountOfMegaAmmo <= 0) {
           this.audioNoAmmo.play();
         }
@@ -231,7 +253,11 @@ class Player {
     const ammo = new Shoot(this.ctx, this.x + 20, this.y + 10);
     this.ammos.push(ammo);
     this.shootAmmo.play();
-
+  }
+  extraShoot() {
+    const ammo = new Shoot(this.ctx, this.x + 20, this.y + 14);
+    this.ammos.push(ammo);
+    this.shootAmmo.play();
   }
   megaShoot(){
     const megaAmmo = new Megashoot(this.ctx, this.x + 20, this.y + 15);

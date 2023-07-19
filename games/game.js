@@ -1,3 +1,16 @@
+const floorAlgae = [
+  "../public/img/al1.png",
+  "../public/img/al2.png",
+  "../public/img/al3.png",
+  "../public/img/al4.png",
+  "../public/img/al5.png",
+  "../public/img/al6.png",
+  "../public/img/al7.png",
+  "../public/img/al8.png",
+  "../public/img/al9.png",
+  "../public/img/al10.png",
+  "../public/img/al11.png",
+];
 class Game {
   constructor(ctx) {
     this.ctx = ctx;
@@ -16,6 +29,7 @@ class Game {
     this.obstacle1Tick = 0;
     this.obstacle2Tick = 0;
     this.obstacle3Tick = 0;
+    this.obstacle4Tick = 0;
 
     this.audio = new Audio("../public/music/under.mp4");
     this.audioSplash0 = new Audio("../public/music/splash0.mp3");
@@ -24,7 +38,7 @@ class Game {
 
   }
   start() {
-    // this.audio.play();
+    this.audio.play();
     this.interval = setInterval(() => {
       this.clear();
       this.draw();
@@ -35,12 +49,14 @@ class Game {
       this.showGameTick--
       if(this.gameTick % 2000 === 0){
         this.levelTick += 1
+        this.player.amountOfMegaAmmo += 1;
         this.showGameTick = 2000
       }
       this.obstacle0Tick++;
       this.obstacle1Tick++;
       this.obstacle2Tick++;
       this.obstacle3Tick++;
+      this.obstacle4Tick++;
 
       //obstacle magikarp
       if (this.obstacle0Tick > Math.random() * 200 + 210) {
@@ -56,23 +72,26 @@ class Game {
           }
       }
       //obstacle pokeball
-      if (this.obstacle2Tick > Math.random() * 400 + 6000) {
+      if (this.obstacle2Tick > Math.random() * 400 + 2000) {
         this.addObstacle2();
-        this.obstacle2Tick = 4500;
+        this.obstacle2Tick = 0;
       }
       //obstacle ramen
-      if (this.obstacle3Tick > Math.random() * 1100 + 1300) {
+      if (this.obstacle3Tick > Math.random() * 1100 + 1200) {
         this.addObstacle3();
         this.obstacle3Tick = 0;
       }
-
-
-
-
-
-
-
-    }, 1000 / 60);
+      //obstacle suelo
+      if (this.obstacle4Tick > Math.random() * 310 + 10) {
+        this.addObstacle4();
+        this.obstacle4Tick = 0;
+      }
+      if (this.player.hit >= 40 && !this.player.evolution) {
+        this.gameOver();
+      } else if (this.player.hit >= 60 && this.player.evolution) {
+        this.gameOver();
+      }
+        }, 1000 / 60);
   }
 
   stop() {
@@ -94,6 +113,11 @@ class Game {
     const obstacle = new Obstacle(this.ctx, -10, "../public/img/ramen.png");
     this.obstacles.push(obstacle);
   }
+  addObstacle4() {
+    const randomIndex = Math.floor(Math.random() * floorAlgae.length);
+    const obstacle = new Obstacle(this.ctx, 5, `../public/img/al${randomIndex}.png`, 135);
+    this.obstacles.push(obstacle);
+  }
 
   clear() {
     this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
@@ -110,6 +134,10 @@ class Game {
     this.ctx.fillText(`NVL ${this.levelTick}`, 15, 8);
     this.ctx.font = "8px Arial";
     this.ctx.fillText(`+1 NVL en ${this.showGameTick.toString().substring(0, 2)}`, 5, 15);
+    
+    if(this.player.hit >= 39){
+          start$$.style.display = "none";
+    }
   }
   move() {
     this.background.move();
@@ -132,12 +160,9 @@ class Game {
         this.player.hit += obs.damage
         obs.x = -300
         this.audioSplash0.play()
-        if(this.player.hit >= 40){
-          this.gameOver()
-        }
+
       }
     });
-
     // arma con pez
     this.obstacles.forEach((obs) => {
       this.player.ammos = this.player.ammos.filter((am) => {
@@ -145,7 +170,6 @@ class Game {
         am.x = -300
         obs.x = -400
         this.player.killCount++
-
         return false;
         } else return true;
       })
@@ -161,9 +185,11 @@ class Game {
         });
   }
   gameOver() {
+    teamRocketEnd$$.style.display = "block";
+    start$$.style.display = "none"
+    restart$$.style.display = "inline"
     this.stop();
     this.obstacles = [];
-    this.player = new Player(ctx);
   }
 }
 

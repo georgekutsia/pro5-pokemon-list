@@ -15,6 +15,7 @@ const drawPokemons = (fullList) => {
   main1$$.innerHTML = "";
   main0$$.style.display = "none";
   main1$$.style.display = "flex";
+  main3$$.style.display = "none";
   match$$.style.display = "none";
   headerDiv$$.style.display = "flex";
   const loadingImage$$ = document.querySelector("#loading-image");
@@ -55,19 +56,23 @@ const drawPokemons = (fullList) => {
       h3$$.textContent = `¿Qué estás diciendo?`;
     }
     loadingImage$$.style.display = "none";
-    allPokemon$$.style.backgroundImage = 'url("./public/img/open.png")';
     allPokemon$$.style.width = "50%";
     allPokemon$$.style.maxWidth = "340px";
     allPokemon$$.style.maxHeight = "200px";
+    allPokemon$$.style.backgroundImage = 'url("./public/img/open.png")';
     allTasks$$.style.backgroundImage = 'url("./public/img/pokeball.png")';
+    allMatch$$.style.backgroundImage = 'url("./public/img/pokeball.png")';
+    allMagikarp$$.style.backgroundImage = 'url("./public/img/pokeball.png")';
     allTasks$$.style.width = "100px";
+    allMagikarp$$.style.width = "100px";
+    allMatch$$.style.width = "100px";
 
     body$$.style.backgroundImage = 'url("./public/img/background-main.webp")';
     body$$.style.backgroundSize = "100%";
     input1$$.style.display = "block";
     inputText1$$.style.display = "block";
     h1$$.style.color = "black";
-    h1$$.innerText = "First generation of Pokemon!";
+    h1$$.innerText = "Primera generación!";
     h1$$.style.backgroundColor = "rgba(255, 255, 255, 0.509)";
   }, intervalTimer);
   intervalTimer = 0;
