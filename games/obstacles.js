@@ -1,23 +1,19 @@
 class Obstacle {
-  constructor(ctx) {
+  constructor(ctx,damage, obstacleImg) {
     this.ctx = ctx;
     this.x = this.ctx.canvas.width;
     this.y = Math.random() * this.ctx.canvas.height;
-    this.w = this.ctx.canvas.width / 10;
-    this.h = this.ctx.canvas.height / 10;
+    this.w = this.ctx.canvas.width / 17;
+    this.h = this.ctx.canvas.width / 17;
     this.vx = -2;
-
+    this.damage = damage
     this.img = new Image();
-    this.img.src = "../public/img/magikarp.png";
+    this.img.src = obstacleImg || "../public/img/mag.png";
     this.img.frame = 0;
   }
   draw() {
     this.ctx.drawImage(
       this.img,
-      0,
-      (this.img.frame * this.img.height) / 3,
-      this.img.width,
-      this.img.height / 3,
       this.x,
       this.y,
       this.w,

@@ -8,23 +8,67 @@ class Game {
     this.interval = null;
 
     this.setListeners();
-    this.obstacleTick = 0;
+    this.gameTick = 0
+    this.levelTick = 1
+    this.showGameTick = 2000;
+
+    this.obstacle0Tick = 0;
+    this.obstacle1Tick = 0;
+    this.obstacle2Tick = 0;
+    this.obstacle3Tick = 0;
 
     this.audio = new Audio("../public/music/under.mp4");
   }
   start() {
-    this.audio.play();
+    // this.audio.play();
     this.interval = setInterval(() => {
       this.clear();
       this.draw();
       this.move();
       this.checkCollisions();
-      this.obstacleTick++;
 
-      if (this.obstacleTick > Math.random() * 200 + 100) {
-        this.addObstacle();
-        this.obstacleTick = 0;
+      this.gameTick++
+      this.showGameTick--
+      if(this.gameTick % 2000 === 0){
+        this.levelTick += 1
+        this.showGameTick = 2000
       }
+      this.obstacle0Tick++;
+      this.obstacle1Tick++;
+      this.obstacle2Tick++;
+      this.obstacle3Tick++;
+
+      console.log(this.gameTick)
+      //obstacle magikarp
+      if (this.obstacle0Tick > Math.random() * 200 + 210) {
+        this.addObstacle1();
+          this.obstacle0Tick = 0;
+      }
+      if (this.obstacle1Tick > Math.random() * 200 + 2000) {
+        this.addObstacle1();
+        //para que al nivel 2 empiece con ffecuencia a salir
+        this.obstacle1Tick = 1750;
+          if (this.gameTick >= 8400) {
+            this.addObstacle1();
+          }
+      }
+      //obstacle pokeball
+      if (this.obstacle2Tick > Math.random() * 400 + 6000) {
+        this.addObstacle2();
+        this.obstacle2Tick = 4500;
+      }
+      //obstacle ramen
+      if (this.obstacle3Tick > Math.random() * 1100 + 1300) {
+        this.addObstacle3();
+        this.obstacle3Tick = 0;
+      }
+
+
+
+
+
+
+
     }, 1000 / 60);
   }
 
@@ -33,10 +77,21 @@ class Game {
     clearInterval(this.interval);
     this.interval = null;
   }
-  addObstacle() {
-    const obstacle = new Obstacle(this.ctx);
+  //los otros Magikarp
+  addObstacle1() {
+    const obstacle = new Obstacle(this.ctx, 10);
     this.obstacles.push(obstacle);
   }
+  //la pokeball que atrapa
+  addObstacle2() {
+    const obstacle = new Obstacle(this.ctx, 50, "../public/img/pokeball.png");
+    this.obstacles.push(obstacle);
+  }
+  addObstacle3() {
+    const obstacle = new Obstacle(this.ctx, -10, "../public/img/ramen.png");
+    this.obstacles.push(obstacle);
+  }
+
   clear() {
     this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
   }
@@ -45,6 +100,13 @@ class Game {
     this.background.draw();
     this.player.draw();
     this.obstacles.forEach((obs) => obs.draw());
+
+
+    this.ctx.font = "10px Arial";
+    this.ctx.fillStyle = "white";
+    this.ctx.fillText(`Nivel ${this.levelTick}`, 110, 140);
+    this.ctx.font = "8px Arial";
+    this.ctx.fillText(`Próximo nivel en ${this.showGameTick.toString().substring(0, 2)}`, 110, 147);
   }
   move() {
     this.background.move();
@@ -64,7 +126,11 @@ class Game {
     // obstaculo con el pez
     this.obstacles.forEach((obs) => {
       if (obs.collides(this.player)) {
-        this.gameOver();
+        this.player.hit += obs.damage
+        obs.x = -300
+        if(this.player.hit >= 40){
+          this.gameOver()
+        }
       }
     });
 

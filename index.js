@@ -3,6 +3,7 @@ let intervalTimer = 20;
 //no me hace falta que sea tan largo, así que es una constante que cambio tras el primer mapeo
 
 const newPokemonlist = [];
+const magikarp = {}
 const getPokemonFullList = async () => {
   for (let i = 1; i <= 150; i++) {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
@@ -21,6 +22,7 @@ const drawPokemons = (fullList) => {
   // loadingImage$$.setAttribute("src", `./public/img/loading${randomNumber}.gif`);
   loadingImage$$.setAttribute("src", `./public/img/loading11.gif`);
   loadingImage$$.style.display = "block";
+
   setTimeout(() => {
     for (const data of fullList) {
       const randomIndex = Math.floor(Math.random() * colors.length);
@@ -31,7 +33,7 @@ const drawPokemons = (fullList) => {
     <img  content: url("../../public/img/pokeball.png"); src="${
       data.sprites.front_default
     }" alt="${data.name}">
-    <h2>${data.name.toUpperCase()}</h2>
+    <h2>${data.name.toUpperCase()}(${data.id})</h2>
     </div>
     <div>
     <article> Este pokemon se llama ${
@@ -71,7 +73,7 @@ const drawPokemons = (fullList) => {
   intervalTimer = 0;
 };
 
-const inputFilterByName = (char) => {
+  const inputFilterByName = (char) => {
   input1$$.addEventListener("input", () => searchByName(input1$$.value, char));
 };
 

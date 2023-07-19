@@ -1,4 +1,4 @@
-const taskList = [];
+
 const addTask = (input) => {
   let newTask$$ = document.createElement("li");
   let taskText$$ = document.createElement("span");
