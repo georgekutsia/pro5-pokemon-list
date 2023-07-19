@@ -18,6 +18,10 @@ class Game {
     this.obstacle3Tick = 0;
 
     this.audio = new Audio("../public/music/under.mp4");
+    this.audioSplash0 = new Audio("../public/music/splash0.mp3");
+    this.audio.volume = 0.07;
+    this.audioSplash0.volume = 0.07;
+
   }
   start() {
     // this.audio.play();
@@ -38,7 +42,6 @@ class Game {
       this.obstacle2Tick++;
       this.obstacle3Tick++;
 
-      console.log(this.gameTick)
       //obstacle magikarp
       if (this.obstacle0Tick > Math.random() * 200 + 210) {
         this.addObstacle1();
@@ -103,10 +106,10 @@ class Game {
 
 
     this.ctx.font = "10px Arial";
-    this.ctx.fillStyle = "white";
-    this.ctx.fillText(`Nivel ${this.levelTick}`, 110, 140);
+    this.ctx.fillStyle = "black";
+    this.ctx.fillText(`NVL ${this.levelTick}`, 15, 8);
     this.ctx.font = "8px Arial";
-    this.ctx.fillText(`Próximo nivel en ${this.showGameTick.toString().substring(0, 2)}`, 110, 147);
+    this.ctx.fillText(`+1 NVL en ${this.showGameTick.toString().substring(0, 2)}`, 5, 15);
   }
   move() {
     this.background.move();
@@ -128,6 +131,7 @@ class Game {
       if (obs.collides(this.player)) {
         this.player.hit += obs.damage
         obs.x = -300
+        this.audioSplash0.play()
         if(this.player.hit >= 40){
           this.gameOver()
         }
@@ -141,10 +145,20 @@ class Game {
         am.x = -300
         obs.x = -400
         this.player.killCount++
+
         return false;
         } else return true;
       })
     })
+    // megaArma con pez
+        this.player.megaAmmos.forEach((mana) => {
+          this.obstacles = this.obstacles.filter((blu) => {
+            if (blu.collides(mana)) {
+              this.player.killCount++;
+              return false;
+            } else return true;
+          });
+        });
   }
   gameOver() {
     this.stop();

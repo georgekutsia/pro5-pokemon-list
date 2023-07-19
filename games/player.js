@@ -1,14 +1,12 @@
 let width = 20
 let height = 20
-let resizing = 15
 class Player {
   constructor(ctx) {
     this.ctx = ctx;
-    this.x = 10;
-    this.y = 0;
-    this.w = this.ctx.canvas.width / resizing;
-    this.h = this.ctx.canvas.width / resizing;
-
+    this.x = 0;
+    this.y = 50;
+    this.w = this.ctx.canvas.width / 15;
+    this.h = this.ctx.canvas.width / 15;
     this.vx = 0.1;
     this.vy = 0;
 
@@ -26,15 +24,32 @@ class Player {
     this.life = 40;
     this.hit = 0;
 
+
+    this.up = 87;
+    this.down = 83;
+    this.left = 65;
+    this.right =68;
     this.tired = 40;
     this.effort = 4;
     this.shooting = 66;
+    this.inactive = true;
+
+    this.megaShooting = 77;
     this.amountOfAmmo = 3;
+    this.amountOfMegaAmmo = 3;
     this.ammos = [];
-    this.ammoCountback = 200;
+    this.megaAmmos = [];
+    this.ammoCountback = 400;
     this.evolution = false;
-    this.splashAudio = new Audio("../public/music/splash.mp3");
+    this.shootAmmo = new Audio("../public/music/splash.mp3");
     this.audioNoAmmo = new Audio("../public/music/noAmmo.mp3")
+    this.megaShootAmmo = new Audio("../public/music/megaShoot.mp3");
+
+
+    this.inactiveCountback = 3000;
+    this.shootAmmo.volume = 0.07;
+    this.audioNoAmmo.volume = 0.07;
+    this.megaShootAmmo.volume = 0.5;
   }
 
   draw() {
@@ -49,13 +64,13 @@ class Player {
       this.w,
       this.h
     );
-    this.ammos.forEach((shoot) => {
-      shoot.draw();
-    });
+    this.ammos.forEach((shoot) => {shoot.draw();});
+    this.megaAmmos.forEach((shoot) => {shoot.draw();});
+
     this.ctx.font = "10px Arial";
     this.ctx.fillStyle = "white";
-    this.ctx.fillText(`Salpicadura: ${this.amountOfAmmo.toString()}`, 210, 140);
-    this.ctx.fillText(`Puntos: ${this.killCount.toString()}`, 230, 130);
+    this.ctx.fillText(`Salpicadura: ${this.amountOfAmmo.toString()}`, 230, 140);
+    this.ctx.fillText(`Puntos: ${this.killCount.toString()}`, 250, 130);
     // this.ctx.fillText(`Bulala${Math.round(this.life * 100) / 100}`, 15, 50);
     // energía
     this.ctx.fillStyle = "yellow";
@@ -73,6 +88,8 @@ class Player {
     this.ctx.strokeRect(230, 3, this.life, 10);
     this.ctx.fillStyle = "black";
     this.ctx.font = "8px Arial";
+    this.ctx.fillText(`Esfuerzo`, 234, 21);
+
     if(!this.evolution){
       this.ctx.fillText(`Magikarp`, 234, 10);
     } else {
@@ -92,14 +109,20 @@ class Player {
       width = 80;
       height = 10;
     }
-      this.effort -= 0.01;
+      this.effort -= 0.03;
+
       if(this.effort <= 0){
         this.effort = 0
       }
       if(this.effort >= 40){
         this.effort = 40
       }
-
+      if(this.effort >= 30){
+        this.inactive = false;
+        setTimeout(() => {
+          this.inactive = true
+        }, this.inactiveCountback);
+      }
   }
 
   move() {
@@ -118,14 +141,21 @@ class Player {
 
     this.ammoCountback--;
     if (this.ammoCountback <= 0) {
-      this.ammoCountback = 200;
+      this.ammoCountback = 600;
       this.amountOfAmmo++;
+      if(this.hit === 0){
+        this.amountOfAmmo++
+      }
+    }
+    if(this.y <= 30){
+      this.effort +=0.02;
+      this.ay = 0.05
     }
 
-    this.ammos.forEach((shoot) => {
-      shoot.move();
-    });
+    this.ammos.forEach((shoot) => {shoot.move();});
+    this.megaAmmos.forEach((shoot) => {shoot.move();});
     this.ammos = this.ammos.filter((ammo) => ammo.isVisible());
+    this.megaAmmos = this.megaAmmos.filter((ammo) => ammo.isVisible());
     if (this.y <= 0) {
       this.y = 0;
       this.vy = 0;
@@ -147,37 +177,40 @@ class Player {
     }
   }
   keyDown(key) {
-    if (key === 87) {
+    if (key === this.up && this.inactive ) {
       this.ay = -0.05;
-      this.effort += 2
+      this.effort += 1.4
     }
-    if (key === 65) {
+    if (key === this.left && this.inactive) {
       this.ax = -0.7;
-      this.effort += 0.5;
-
+      this.effort += 0.9;
     }
-    if (key === 68) {
+    if (key === this.right && this.inactive) {
       this.ax = +0.5;
-      this.effort += 0.5;
-
+      this.effort += 0.9;
     }
-    if (key === 83) {
+    if (key === this.down && this.inactive) {
       this.ay = 0.05;
-      this.effort += 0.5;
-
+      this.effort += 0.9;
     }
     if (key === this.shooting) {
       if(this.amountOfAmmo >= 1){
         this.shoot();
         this.amountOfAmmo -= 1;
       this.effort += 2;
-          if (this.evolution) {
-            this.bigShoot();
-          }
       } else if (this.amountOfAmmo <= 0) {
         this.audioNoAmmo.play()
     }
-    }
+  }
+      if (key === this.megaShooting) {
+        if (this.amountOfMegaAmmo >= 1) {
+          this.megaShoot();
+          this.amountOfMegaAmmo -= 1;
+          this.effort += 2;
+        } else if (this.amountOfMegaAmmo <= 0) {
+          this.audioNoAmmo.play();
+        }
+      }
   }
   keyUp(key) {
     if (key === 87) {
@@ -197,12 +230,14 @@ class Player {
   shoot() {
     const ammo = new Shoot(this.ctx, this.x + 20, this.y + 10);
     this.ammos.push(ammo);
-    this.splashAudio.play();
+    this.shootAmmo.play();
 
   }
-  bigShoot(){
-        const ammo = new Shoot(this.ctx, this.x + 20, this.y + 15);
-        this.ammos.push(ammo);
+  megaShoot(){
+    const megaAmmo = new Megashoot(this.ctx, this.x + 20, this.y + 15);
+    this.megaAmmos.push(megaAmmo);
+    this.megaShootAmmo.play();
+
   }
 }
 
@@ -211,7 +246,6 @@ class Shoot {
     this.ctx = ctx;
     this.x = x;
     this.y = y;
-    this.r = 5;
 
     this.g = -0.005;
 
@@ -240,13 +274,76 @@ class Shoot {
     );
   }
   move() {
-    // this.img.frame++;
-    // if (this.img.frame > 7) {
-    //   this.img.frame = 0;
-    // }
     this.vy += this.g;
     this.x += this.vx;
     this.y += this.vy;
+  }
+  collides(objetivo) {
+    const colX =
+      this.x <= objetivo.x + objetivo.w && this.x + this.w > objetivo.x + 10;
+    const colY =
+      this.y + this.h > objetivo.y && this.y < objetivo.y + objetivo.h;
+    return colX && colY;
+  }
+  isVisible() {
+    return this.x < this.ctx.canvas.width;
+  }
+}
+
+
+
+class Megashoot {
+  constructor(ctx, x, y) {
+    this.ctx = ctx;
+    this.x = x;
+    this.y = y;
+
+    this.vy = 1;
+    this.vx = 0.3;
+    this.img = new Image();
+    this.img.src = "../public/img/waterball.png";
+    this.img.frame = 0;
+
+    this.w = 10;
+    this.h = 10;
+    this.megaTick = 0;
+  }
+
+  draw() {
+    this.ctx.drawImage(
+      this.img,
+      this.x,
+      this.y,
+      this.w,
+      this.h
+    );
+  }
+  move() {
+    this.x += this.vx;
+    this.y += this.vy;
+    this.vy += 0.02
+    this.w += 0.1
+    this.h += 0.1
+    this.megaTick++
+    
+    if (this.megaTick >= 20) {
+      this.vy -= 0.1;
+    }
+    if (this.megaTick >= 60) {
+      this.vy += 0.1;
+    }
+    if (this.megaTick >= 100) {
+      this.vy += 0.05;
+    }
+    if (this.megaTick >= 140) {
+      this.vy -= 0.1;
+    }
+    if (this.megaTick >= 270) {
+      this.vy += 0.1;
+    }
+    if (this.megaTick >= 350) {
+      this.vy -= 0.1;
+    }
   }
   collides(objetivo) {
     const colX =
