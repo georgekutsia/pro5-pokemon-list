@@ -220,6 +220,7 @@ body .header-ul li:hover .title {
   margin-top: 20px;
   padding-top: 30px;
   display: flex;
+  transition: 0.3s ease-in-out;
 }
 .main-div1 figure h2 {
   font-size: 25px;
@@ -259,6 +260,10 @@ body .header-ul li:hover .title {
   margin-top: 20px;
   margin-bottom: -10px;
   transition: 1s ease-in-out;
+}
+.main-div1 figure:hover {
+  scale: 1.1;
+  transform: rotate(-3deg);
 }
 .main-div1 div {
   margin-top: 35px;
@@ -331,7 +336,10 @@ body .header-ul li:hover .title {
   scale: 1.2;
 }
 .main-div3 #shooter-restart {
-  display: none;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.28);
+  border-radius: 10px;
+  bottom: 25%;
   padding: 10px 20px;
   font-size: 30px;
 }

@@ -1,4 +1,4 @@
-let intervalTimer = 20;
+let intervalTimer = 2000;
 //intervali timer marca la primera carga, para la animación, pero para los siguientes filtros
 //no me hace falta que sea tan largo, así que es una constante que cambio tras el primer mapeo
 
@@ -31,16 +31,12 @@ const drawPokemons = (fullList) => {
       let characterCard1$$ = document.createElement("figure");
       characterCard1$$.innerHTML = `
     <div>
-    <img  content: url("../../public/img/pokeball.png"); src="${
-      data.sprites.front_default
-    }" alt="${data.name}">
-    <h2>${data.name.toUpperCase()}(${data.id})</h2>
+      <img  content: url("../../public/img/pokeball.png"); src="${data.sprites.front_default}" alt="${data.name}">
+      <h2>${data.name.toUpperCase()}(${data.id})</h2>
     </div>
     <div>
-    <article> Este pokemon se llama ${
-      data.name.charAt(0).toUpperCase() + data.name.slice(1)
-    };</article>
-    <p style="color:${randomColor}"> y es tipo ${data.types[0].type.name} </p>
+      <article> Este pokemon se llama ${data.name.charAt(0).toUpperCase() + data.name.slice(1)};</article>
+      <p style="color:${randomColor}"> y es tipo ${data.types[0].type.name} </p>
     </div>
     `;
       // for (const abil of data.abilities) {

@@ -16,6 +16,7 @@
       margin-top: 20px;
       padding-top: 30px;
       display: flex;
+      transition: 0.3s ease-in-out;
       h2{
         font-size: 25px;
         text-shadow: 1px 1px rgb(0, 218, 51);
@@ -56,6 +57,11 @@
         transition: 1s ease-in-out;
       }
     }
+          figure:hover{
+        scale: 1.1;
+    transform: rotate(-3deg);
+
+      }
     div{
     margin-top: 35px;
     }

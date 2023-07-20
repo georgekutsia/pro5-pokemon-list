@@ -45,13 +45,12 @@ class Player {
     this.megaShootAmmo = new Audio("../public/music/megaShoot.mp3");
     this.evolve = new Audio("../public/music/evolucionar.mp3");
 
-
     this.inactiveCountback = 3000;
     this.shootAmmo.volume = 0.07;
     this.audioNoAmmo.volume = 0.07;
     this.megaShootAmmo.volume = 0.07;
+    this.evolve.volume = 0.07;
   }
-
   draw() {
     this.ctx.drawImage(
       this.img,
@@ -69,9 +68,9 @@ class Player {
 
     this.ctx.font = "10px Arial";
     this.ctx.fillStyle = "white";
-    this.ctx.fillText(`Salpicadura [B]: ${this.amountOfAmmo.toString()}`, 218, 130);
-    this.ctx.fillText(`Mega splash [M]: ${this.amountOfMegaAmmo.toString()}`, 213, 140);
     this.ctx.fillText(`Puntos: ${this.killCount.toString()}`, 250, 120);
+    this.ctx.fillText(`Salpicadura [B]:${this.amountOfAmmo.toString()}`, 216, 130);
+    this.ctx.fillText(`Mega splash [M]:${this.amountOfMegaAmmo.toString()}`, 211, 140);
     // energía
     this.ctx.fillStyle = "yellow";
     if(this.effort >= 30){

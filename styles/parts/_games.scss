@@ -65,7 +65,10 @@ display: none;
     scale: 1.2;
   }
   #shooter-restart{
-    display: none;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.28);
+    border-radius: 10px;
+    bottom: 25%;
     padding: 10px 20px;
     font-size: 30px;
   }
