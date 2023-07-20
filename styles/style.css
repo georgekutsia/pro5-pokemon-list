@@ -58,7 +58,7 @@ body .header-div1 #input-box h5 {
 }
 body .header-div1 #input-box #input-text {
   display: none;
-  padding-left: 10px;
+  padding: 5px 10px;
 }
 body .header-div1 #input-box #input-space {
   background-color: red;
@@ -320,7 +320,7 @@ body .header-ul li:hover .title {
   background-color: rgba(255, 255, 255, 0.28);
   border-radius: 10px;
   bottom: 25%;
-  left: 45%;
+  left: auto;
   padding: 10px 20px;
   font-size: 30px;
   opacity: 1;

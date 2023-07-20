@@ -10,7 +10,6 @@ class Player {
     this.h = this.ctx.canvas.width / 17;
     this.vx = 0.05;
     this.vy = 0;
-
     this.g = 0.005;
     this.evolving = false
     this.ay = 0;
@@ -35,8 +34,8 @@ class Player {
     this.inactive = true;
 
     this.megaShooting = 77;
-    this.amountOfAmmo = 3;
-    this.amountOfMegaAmmo = 3;
+    this.amountOfAmmo = 10;
+    this.amountOfMegaAmmo = 10;
     this.ammos = [];
     this.megaAmmos = [];
     this.ammoCountback = 400;
@@ -70,8 +69,8 @@ class Player {
 
     this.ctx.font = "10px Arial";
     this.ctx.fillStyle = "white";
-    this.ctx.fillText(`Salpicadura: ${this.amountOfAmmo.toString()}`, 230, 130);
-    this.ctx.fillText(`Mega splash: ${this.amountOfMegaAmmo.toString()}`, 230, 140);
+    this.ctx.fillText(`Salpicadura [B]: ${this.amountOfAmmo.toString()}`, 218, 130);
+    this.ctx.fillText(`Mega splash [M]: ${this.amountOfMegaAmmo.toString()}`, 213, 140);
     this.ctx.fillText(`Puntos: ${this.killCount.toString()}`, 250, 120);
     // energía
     this.ctx.fillStyle = "yellow";
@@ -90,6 +89,8 @@ class Player {
     this.ctx.fillStyle = "black";
     this.ctx.font = "8px Arial";
     this.ctx.fillText(`Esfuerzo`, 234, 21);
+    this.ctx.fillText(`Mov: WASD`, 100, 8);
+
 
     if(!this.evolution){
       this.ctx.fillText(`Magikarp`, 234, 10);

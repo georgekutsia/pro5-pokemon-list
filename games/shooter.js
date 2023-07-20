@@ -30,7 +30,7 @@ start$$.addEventListener("click", function () {
   canvas$$.style.display = "block";
   teamRocket$$.style.display = "none";
   start$$.style.opacity = "0.2"
-  start$$.style.bottom = "5%"
+  start$$.style.bottom = "8%"
     if (game.interval) {
       game.stop();
       start$$.innerText = "Start";
