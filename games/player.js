@@ -12,7 +12,7 @@ class Player {
     this.vy = 0;
 
     this.g = 0.005;
-this.bla = false
+    this.evolving = false
     this.ay = 0;
     this.ax = 0;
     this.fastSwiming = 20;
@@ -44,6 +44,7 @@ this.bla = false
     this.shootAmmo = new Audio("../public/music/splash.mp3");
     this.audioNoAmmo = new Audio("../public/music/noAmmo.mp3")
     this.megaShootAmmo = new Audio("../public/music/megaShoot.mp3");
+    this.evolve = new Audio("../public/music/evolucionar.mp3");
 
 
     this.inactiveCountback = 3000;
@@ -101,21 +102,22 @@ this.bla = false
     }
 
     if(this.killCount != 0 && this.killCount % 10 === 0){
+      this.evolve.play()
       this.img.src = "../public/img/gyrados.png"
       this.w = this.ctx.canvas.width / 8;
       this.h = this.ctx.canvas.width / 8;
       this.evolution = true;
       this.life = 60
       width = 80;
-      height = 10;
+      height = 20;
     }
-    if(this.bla){
+    if(this.evolving){
       this.hit -= 0.03
     }
     if(this.evolution){
-      this.bla = true
+      this.evolving = true
         setTimeout(() => {
-          this.bla = false
+          this.evolving = false
           this.img.src = "../public/img/magikarp.png";
           this.life = 40;
           width = 20;

@@ -38,7 +38,7 @@ class Game {
 
   }
   start() {
-    this.audio.play();
+    // this.audio.play();
     this.interval = setInterval(() => {
       this.clear();
       this.draw();
