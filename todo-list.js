@@ -1,9 +1,9 @@
-
+const taskList= []
 const addTask = (input) => {
   let newTask$$ = document.createElement("li");
   let taskText$$ = document.createElement("span");
   let deleteBtn$$ = document.createElement("button");
-  
+
   taskText$$.innerText = `${input}`;
   deleteBtn$$.innerHTML = `<i class="fa-solid fa-dumpster"></i>`;
   
@@ -18,7 +18,7 @@ const addTask = (input) => {
 };
 
 btnAdd$$.addEventListener("click", (event) => {
-  event.preventDefault(); // Evita la recarga de la página
+  event.preventDefault(); 
   addTask(inputToDo$$.value);
   for (let i = 0; i < taskList.length; i++) {
     const tasks = taskList[i];
@@ -51,3 +51,6 @@ const showTasks = () => {
 
 
 allTasks$$.addEventListener("click", ()=> showTasks() )
+
+
+

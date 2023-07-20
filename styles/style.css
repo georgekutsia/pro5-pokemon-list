@@ -137,6 +137,13 @@ body .header-ul li:hover .title {
 .main-div0 {
   display: none;
 }
+.main-div0 #btn-add {
+  transition: 0.2s ease-in-out;
+}
+.main-div0 #btn-add:hover {
+  scale: 1.2;
+  color: rgb(99, 255, 99);
+}
 .main-div0 h1 {
   color: white;
   font-size: 60px;
