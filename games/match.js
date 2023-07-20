@@ -89,6 +89,7 @@ let matchChosenCards = [];
 let matchWonCards = [];
 
 function createBoard() {
+  grid$$.innerHTML=""
     match$$.style.display = "block";
     main0$$.style.display = "none";
     main1$$.style.display = "none";
@@ -115,7 +116,6 @@ function createBoard() {
     newCard$$.setAttribute("data-id", matchCard.id);
     newCard$$.addEventListener("click", (event) => flipNewCard(event.target, i));
     grid$$.appendChild(newCard$$);
-
   }
 }
 
