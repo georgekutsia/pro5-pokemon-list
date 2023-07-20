@@ -15,14 +15,6 @@ allMagikarp$$.addEventListener("click", () => {
   allMatch$$.style.backgroundImage = 'url("./public/img/pokeball.png")';
 
   allMagikarp$$.style.backgroundImage = 'url("./public/img/open.png")';
-  allMagikarp$$.style.width = "50%";
-  allMagikarp$$.style.maxWidth = "340px";
-  allMagikarp$$.style.maxHeight = "200px";
-
-
-  allPokemon$$.style.width = "100px";
-  allMatch$$.style.width = "100px";
-  allTasks$$.style.width = "100px";
 
 });
 

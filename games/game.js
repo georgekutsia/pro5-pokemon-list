@@ -35,8 +35,8 @@ class Game {
     this.audioSplash0 = new Audio("../public/music/splash0.mp3");
     this.audio.volume = 0.07;
     this.audioSplash0.volume = 0.07;
-
   }
+  
   start() {
     this.audio.play();
     this.interval = setInterval(() => {

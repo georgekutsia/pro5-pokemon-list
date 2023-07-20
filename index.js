@@ -52,16 +52,10 @@ const drawPokemons = (fullList) => {
       h3$$.textContent = `¿Qué estás diciendo?`;
     }
     loadingImage$$.style.display = "none";
-    allPokemon$$.style.width = "50%";
-    allPokemon$$.style.maxWidth = "340px";
-    allPokemon$$.style.maxHeight = "200px";
     allPokemon$$.style.backgroundImage = 'url("./public/img/open.png")';
     allTasks$$.style.backgroundImage = 'url("./public/img/pokeball.png")';
     allMatch$$.style.backgroundImage = 'url("./public/img/pokeball.png")';
     allMagikarp$$.style.backgroundImage = 'url("./public/img/pokeball.png")';
-    allTasks$$.style.width = "100px";
-    allMagikarp$$.style.width = "100px";
-    allMatch$$.style.width = "100px";
 
     body$$.style.backgroundImage = 'url("./public/img/background-main.webp")';
     body$$.style.backgroundSize = "100%";

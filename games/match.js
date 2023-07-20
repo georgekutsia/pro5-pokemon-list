@@ -101,13 +101,7 @@ function createBoard() {
     allMatch$$.style.backgroundImage = 'url("./public/img/open.png")';
     allMagikarp$$.style.backgroundImage = 'url("./public/img/pokeball.png")';
 
-    allMatch$$.style.width = "50%";
-    allMatch$$.style.maxWidth = "340px";
-    allMatch$$.style.maxHeight = "200px";
 
-    allMagikarp$$.style.width = "100px";
-    allPokemon$$.style.width = "100px";
-    allTasks$$.style.width = "100px";
 
   for (let i = 0; i < dataPokemon.length; i++) {
     const matchCard = dataPokemon[i];

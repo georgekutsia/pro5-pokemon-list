@@ -1,63 +1,71 @@
-.main{
-  &-div0{
+.main {
+  &-div0 {
     display: none;
-    #btn-add{
+    #btn-add {
       transition: 0.2s ease-in-out;
     }
-    #btn-add:hover{
+    #btn-add:hover {
       scale: 1.2;
       color: rgb(99, 255, 99);
     }
-    h1{
+    h1 {
       color: white;
       font-size: 60px;
       animation: dancing 1s infinite;
-      margin-bottom: 15px
+      margin-bottom: 15px;
     }
-    &-div{
-      button{
-        font-size: 38px;
-        color: white;
-        background-color: transparent;
-        border: none;
+    &-div {
+      form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        input {
+          height: 35px;
+          width: 400px;
+        }
+        button {
+          font-size: 38px;
+          color: white;
+          background-color: transparent;
+          border: none;
+        }
       }
-      &-ul{
+      &-ul {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
-      li{
-      background-image: url("../../public/img/note-dexxx.png");
-      background-size:contain;
-      height: 179px;
-      width: 420px;
-      padding-top: 57px;
-      font-size: 20px;
-      flex-wrap: wrap;
-      position: relative;
-      button{
-        position: absolute;
-        top: 5px;
-        right: 5px;
-        width: 60px;
-        height: auto;
-        font-size: 30px;
-        color: rgb(255, 255, 255);
-        text-shadow: 1px 1px greenyellow;
-        background-color: transparent;
-        border: none;
-        transition: 0.5s ease-out;
-      }
-      button:hover{
-        text-shadow: 3px 3px green;
-        color: rgb(255, 121, 121);
-      }
+        li {
+          background-image: url("../../public/img/note-dexxx.png");
+          background-size: contain;
+          height: 179px;
+          width: 420px;
+          padding-top: 57px;
+          font-size: 20px;
+          font-weight: 600;
+          flex-wrap: wrap;
+          position: relative;
+          button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 60px;
+            height: auto;
+            font-size: 30px;
+            color: rgb(255, 255, 255);
+            text-shadow: 1px 1px greenyellow;
+            background-color: transparent;
+            border: none;
+            transition: 0.5s ease-out;
+          }
+          button:hover {
+            text-shadow: 3px 3px green;
+            color: rgb(255, 121, 121);
+          }
         }
       }
     }
   }
-
 }
-
 
 @keyframes dancing {
   0% {

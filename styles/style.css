@@ -83,6 +83,7 @@ body .header-div1 img {
 body .header-ul {
   position: relative;
   display: flex;
+  justify-content: space-evenly;
   gap: 25px;
 }
 body .header-ul li {
@@ -91,18 +92,21 @@ body .header-ul li {
   justify-content: center;
   position: relative;
   list-style: none;
-  width: 100px;
-  height: 150px;
+  width: 7vw;
+  min-width: 60px;
+  height: 7vw;
+  min-height: 60px;
   background-image: url("../../public/img/pokeball.png");
   background-size: 100%;
   background-repeat: no-repeat;
   border-radius: 60px;
   cursor: pointer;
   transition: 0.5s;
+  font-size: 10px;
 }
 body .header-ul li:hover {
-  width: 280px;
-  height: 110px;
+  width: 14vw;
+  height: 4vw;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
 }
 body .header-ul li::before {
@@ -119,6 +123,7 @@ body .header-ul li:hover::before {
 }
 body .header-ul li span {
   position: absolute;
+  font-size: 1px;
 }
 body .header-ul li .title {
   color: #fff;
@@ -132,6 +137,7 @@ body .header-ul li .title {
 body .header-ul li:hover .title {
   transform: scale(1);
   transition-delay: 0.25s;
+  font-size: 16px;
 }
 
 .main-div0 {
@@ -150,7 +156,16 @@ body .header-ul li:hover .title {
   animation: dancing 1s infinite;
   margin-bottom: 15px;
 }
-.main-div0-div button {
+.main-div0-div form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-div0-div form input {
+  height: 35px;
+  width: 400px;
+}
+.main-div0-div form button {
   font-size: 38px;
   color: white;
   background-color: transparent;
@@ -168,6 +183,7 @@ body .header-ul li:hover .title {
   width: 420px;
   padding-top: 57px;
   font-size: 20px;
+  font-weight: 600;
   flex-wrap: wrap;
   position: relative;
 }

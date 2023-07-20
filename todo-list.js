@@ -17,6 +17,7 @@ const addTask = (input) => {
   taskList.push(newTask$$);
 };
 
+
 btnAdd$$.addEventListener("click", (event) => {
   event.preventDefault(); 
   addTask(inputToDo$$.value);
@@ -40,12 +41,7 @@ const showTasks = () => {
   allPokemon$$.style.backgroundImage = 'url("./public/img/pokeball.png")';
   allMatch$$.style.backgroundImage = 'url("./public/img/pokeball.png")';
   allMagikarp$$.style.backgroundImage = 'url("./public/img/pokeball.png")';
-  allTasks$$.style.width = "50%";
-  allTasks$$.style.maxWidth = "340px";
-  allTasks$$.style.maxHeight = "200px";
-  allPokemon$$.style.width = "100px";
-  allMatch$$.style.width = "100px";
-  allMagikarp$$.style.width = "100px";
+
     
 }
 
