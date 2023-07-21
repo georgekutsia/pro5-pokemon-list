@@ -36,7 +36,7 @@ const showTasks = () => {
   main1$$.style.display = "none";
   main3$$.style.display = "none";
   headerDiv$$.style.display = "none";
-  body$$.style.backgroundImage = 'url("./public/img/background-library.jpeg")';
+  body$$.style.backgroundColor = "rgb(152, 255, 212)";
   allTasks$$.style.backgroundImage = 'url("./public/img/open.png")';
   allPokemon$$.style.backgroundImage = 'url("./public/img/pokeball.png")';
   allMatch$$.style.backgroundImage = 'url("./public/img/pokeball.png")';

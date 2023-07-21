@@ -56,9 +56,7 @@ const drawPokemons = (fullList) => {
     allTasks$$.style.backgroundImage = 'url("./public/img/pokeball.png")';
     allMatch$$.style.backgroundImage = 'url("./public/img/pokeball.png")';
     allMagikarp$$.style.backgroundImage = 'url("./public/img/pokeball.png")';
-
-    body$$.style.backgroundImage = 'url("./public/img/background-main.webp")';
-    body$$.style.backgroundSize = "100%";
+    body$$.style.backgroundColor = "rgb(195, 152, 255)";
     input1$$.style.display = "block";
     inputText1$$.style.display = "block";
     h1$$.style.color = "black";

@@ -95,7 +95,6 @@ function createBoard() {
     main1$$.style.display = "none";
     main3$$.style.display = "none"
     h1$$.innerText = "Encuentra cartas repetidas!";
-    body$$.style.backgroundImage = 'url("./public/img/background-match.jpeg")';
     allPokemon$$.style.backgroundImage = 'url("./public/img/pokeball.png")';
     allTasks$$.style.backgroundImage = 'url("./public/img/pokeball.png")';
     allMatch$$.style.backgroundImage = 'url("./public/img/open.png")';
