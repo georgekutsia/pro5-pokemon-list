@@ -72,9 +72,9 @@ class Game {
           }
       }
       //obstacle pokeball
-      if (this.obstacle2Tick > Math.random() * 400 + 2000) {
+      if (this.obstacle2Tick > Math.random() * 400 + 6000) {
         this.addObstacle2();
-        this.obstacle2Tick = 0;
+        this.obstacle2Tick = 4500;
       }
       //obstacle ramen
       if (this.obstacle3Tick > Math.random() * 1100 + 1200) {

@@ -24,7 +24,6 @@ class Player {
     this.life = 40;
     this.hit = 0;
 
-
     this.up = 87;
     this.down = 83;
     this.left = 65;
@@ -101,7 +100,7 @@ class Player {
       this.hit = 0
     }
 
-    if(this.killCount != 0 && this.killCount % 10 === 0){
+    if(this.killCount != 0 && this.killCount % 20 === 0){
       this.evolve.play()
       this.img.src = "../public/img/gyrados.png"
       this.w = this.ctx.canvas.width / 8;
