@@ -86,6 +86,7 @@ const start = async () => {
   await getPokemonFullList();
   inputFilterByName(newPokemonlist);
 };
+
 start();
 
 allPokemon$$.addEventListener("click", () => drawPokemons(newPokemonlist));
