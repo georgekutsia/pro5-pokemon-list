@@ -103,7 +103,7 @@ body .header-ul li {
 }
 body .header-ul li:hover {
   width: 14vw;
-  height: 4vw;
+  height: 7vw;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
 }
 body .header-ul li::before {
@@ -134,7 +134,7 @@ body .header-ul li .title {
 body .header-ul li:hover .title {
   transform: scale(1);
   transition-delay: 0.25s;
-  font-size: 16px;
+  font-size: 1.5rem;
 }
 
 .main-div0 {

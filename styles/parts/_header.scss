@@ -93,7 +93,7 @@ body{
     }
     li:hover{
       width:14vw;
-      height:4vw;
+      height:7vw;
       box-shadow: 0 10px 25px rgba(0,0,0,0);
     }
     li::before{
@@ -126,7 +126,7 @@ body{
     {
       transform:scale(1);
       transition-delay:0.25s;
-      font-size: 16px;
+      font-size: 1.5rem;
     }
   }
   }
